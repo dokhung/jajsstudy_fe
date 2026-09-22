@@ -3,6 +3,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { Login } from "./components/Login";
 import ComponentPreview from "./gallery/ComponentPreview";
 import Home from "./pages/Home";
+import {LoginSoloPlay} from "./components/Login_soloPlay.tsx";
+import {LoginPractice} from "./components/LoginPractice.tsx";
 
 // 새 컴포넌트를 import하고 이 목록에 추가하세요.
 // 첫 페이지의 미리보기, 제목 링크, 상세 페이지가 이 설정을 함께 사용합니다.
@@ -16,6 +18,16 @@ export const componentRoutes: {
     path: "/components/Login",
     element: <Login />,
   },
+    {
+        title:"LoginSolo",
+        path:"/components/Login_soloPlay",
+        element:<LoginSoloPlay/>,
+    },
+    {
+        title:"LoginPractice",
+        path:"/components/LoginPractice",
+        element:<LoginPractice/>,
+    }
 ];
 
 export default function AppRouter() {
@@ -32,7 +44,7 @@ export default function AppRouter() {
                 to="/"
                 className="text-sm text-gray-600 underline underline-offset-4"
               >
-                ← 목록으로
+                ← Back List
               </Link>
               <h1 className="my-6 text-xl font-medium">{title}</h1>
               <ComponentPreview key={path}>{element}</ComponentPreview>
