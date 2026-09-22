@@ -5,6 +5,9 @@ import ComponentPreview from "./gallery/ComponentPreview";
 import Home from "./pages/Home";
 import {LoginSoloPlay} from "./components/Login_soloPlay.tsx";
 import {LoginPractice} from "./components/LoginPractice.tsx";
+import {LoginPractice2} from "./components/LoginPractice2.tsx";
+import {LoginPractice3} from "./components/LoginPractice3.tsx";
+import {LoginPractice4} from "./components/LoginPractice4.tsx";
 
 // 새 컴포넌트를 import하고 이 목록에 추가하세요.
 // 첫 페이지의 미리보기, 제목 링크, 상세 페이지가 이 설정을 함께 사용합니다.
@@ -27,7 +30,23 @@ export const componentRoutes: {
         title:"LoginPractice",
         path:"/components/LoginPractice",
         element:<LoginPractice/>,
-    }
+    },
+    {
+        title:"LoginPractice2",
+        path:"/components/LoginPractice2",
+        element:<LoginPractice2/>,
+    },
+    {
+        title:"LoginPractice3",
+        path:"/components/LoginPractice3",
+        element:<LoginPractice3/>,
+    },
+    {
+        title:"LoginPractice4",
+        path:"/components/LoginPractice4",
+        element:<LoginPractice4/>,
+    },
+
 ];
 
 export default function AppRouter() {
