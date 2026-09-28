@@ -11,6 +11,7 @@ import {LoginPractice4} from "./components/LoginPractice4.tsx";
 import {LoginPractice5} from "./components/LoginPractice5.tsx";
 import {LoginPractice6} from "./components/LoginPractice6.tsx";
 import LoginPractice7 from "./components/LoginPractice7.tsx";
+import {LoginPractice8} from "./components/LoginPractice8.tsx";
 
 // 새 컴포넌트를 import하고 이 목록에 추가하세요.
 
@@ -64,6 +65,11 @@ export const componentRoutes: {
         title:"LoginPractice7",
         path:"/components/LoginPractice7",
         element:<LoginPractice7/>,
+    },
+    {
+        title:"LoginPractice8",
+        path:"/components/LoginPractice8",
+        element:<LoginPractice8/>,
     }
 
 ];
