@@ -12,10 +12,8 @@ import {LoginPractice5} from "./components/LoginPractice5.tsx";
 import {LoginPractice6} from "./components/LoginPractice6.tsx";
 import LoginPractice7 from "./components/LoginPractice7.tsx";
 import {LoginPractice8} from "./components/LoginPractice8.tsx";
+import {LoginPractice9} from "./components/LoginPractice9.tsx";
 
-// 새 컴포넌트를 import하고 이 목록에 추가하세요.
-
-// 첫 페이지의 미리보기, 제목 링크, 상세 페이지가 이 설정을 함께 사용합니다.
 export const componentRoutes: {
   title: string;
   path: string;
@@ -70,6 +68,11 @@ export const componentRoutes: {
         title:"LoginPractice8",
         path:"/components/LoginPractice8",
         element:<LoginPractice8/>,
+    },
+    {
+        title:"LoginPractice9",
+        path:"/components/LoginPractice9",
+        element:<LoginPractice9/>,
     }
 
 ];
