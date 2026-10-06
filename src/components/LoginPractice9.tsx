@@ -13,26 +13,41 @@ export const LoginPractice9 = () : React.JSX.Element => {
     // Success
     const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
+
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setEmailError("");
+        setPasswordError("");
+        setIsSuccess(false);
+
+        let isValid : boolean = true;
 
         if (email === ""){
             setEmailError("Email is required");
+            isValid = false;
         }
 
-        if(email.includes("@")){
+        else if(!email.includes("@")){
             setEmailError("Email is invalid");
+            isValid = false;
         }
 
         if (password === ""){
             setPasswordError("Password is required");
+            isValid = false;
         }
 
-        if (password.length < 8){
+        else if (password.length < 8){
             setPasswordError("Password must be at least 8 characters");
+            isValid = false;
         }
 
-        setIsSuccess(true);
+        if (isValid) {
+            setIsSuccess(true);
+        }
+
+
 
     }
 
@@ -50,6 +65,7 @@ export const LoginPractice9 = () : React.JSX.Element => {
                             className="flex justify-center items-center border border-gray-500"
                         type="email"
                         value={email}
+                            id={"email"}
                         onChange={(e) => setEmail(e.target.value)}/>
                         {emailError && <p className="text-red-600">{emailError}</p>}
                     </div>
@@ -61,9 +77,10 @@ export const LoginPractice9 = () : React.JSX.Element => {
                             className="w-full flex justify-center items-center border border-gray-500"
                         type="password"
                         value={password}
+                            id={"password"}
                         onChange={(e) => setPassword(e.target.value)}/>
                         {passwordError && (
-                            <div className="text-red-500 text-red-500">
+                            <div className="text-red-500">
                                 {passwordError}
                             </div>
                         )}
@@ -76,7 +93,7 @@ export const LoginPractice9 = () : React.JSX.Element => {
                 </form>
                 {isSuccess && (
                     <div className="flex items-center justify-center text-sm font-medium text-gray-700">
-                        {isSuccess}
+                        Login successful!
                     </div>
                 )}
             </section>
