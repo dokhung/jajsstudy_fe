@@ -6,7 +6,7 @@ export const LoginPractice10 = () : JSX.Element => {
     const [password,setPassword] = useState<string>('');
     const [emailError,setEmailError] = useState<string>('');
     const [passwordError,setPasswordError] = useState<string>('');
-    const [isLoging,setIsLoging] = useState<boolean>(false);
+    const [isLoading,setIsLoading] = useState<boolean>(false);
     const [isSuccess,setIsSuccess] = useState<boolean>(false);
 
     const handleSubmit = (e: React.FormEvent<HTMLElement>)  => {
@@ -35,12 +35,18 @@ export const LoginPractice10 = () : JSX.Element => {
             isValid = false;
         }
 
+        if (!isValid){
+            return;
+        }
+
+        setIsLoading(true);
+
         setTimeout((): void =>{
             if (isValid){
-                setIsLoging(false);
+                setIsLoading(false);
                 setIsSuccess(true);
             }
-        })
+        },2000)
     }
 
     return(
@@ -55,14 +61,14 @@ export const LoginPractice10 = () : JSX.Element => {
                     </h1>
                 </div>
                 <div className={"flex flex-col gap-4 p-4"}>
-                    <form className={"flex flex-col"}>
+                    <form className={"flex flex-col"} onSubmit={handleSubmit}>
                         <div className={"flex flex-col"}>
                             <label>
                                 Email
                             </label>
                             <input type="email"
-                            className={"border border-[#d9d9d9] w-full p-4 rounded-xl ring-4"}
-                                   onChange={(e) => setEmail(e.target.value)}
+                            className={"border border-[#d9d9d9] w-full p-4 rounded-xl focus:ring-4"}
+                                   onChange={(e: React.ChangeEvent<HTMLInputElement>):void => setEmail(e.target.value)}
                                    id={"email"}
                                    value={email}
                             />
@@ -75,8 +81,8 @@ export const LoginPractice10 = () : JSX.Element => {
                                 Password
                             </label>
                             <input type="password"
-                            className={"border border-[#d9d9d9] w-full p-4 rounded-xl ring-4"}
-                                    onChange={(e) => setPassword(e.target.value)}
+                            className={"border border-[#d9d9d9] w-full p-4 rounded-xl focus:ring-4"}
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>):void => setPassword(e.target.value)}
                                    value={password}
                                    id={"password"}
                             />
@@ -84,11 +90,10 @@ export const LoginPractice10 = () : JSX.Element => {
                         </div>
                         <div className={"flex justify-center mt-4"}>
                             <button className={"border border-black w-full bg-blue-400 hover:bg-blue-500 text-white rounded-xl"}
-                                    disabled={isLoging}
-                                    type={"button"}
-                                    onClick={handleSubmit}
+                                    disabled={isLoading}
+                                    type={"submit"}
                             >
-                                {isLoging ? "Loading..." : "Login"}
+                                {isLoading ? "Loading..." : "Login"}
                             </button>
                         </div>
                     </form>
@@ -98,12 +103,12 @@ export const LoginPractice10 = () : JSX.Element => {
                         </p>
                     )}
                     <div className={"flex flex justify-between gap-4"}>
-                        <span>
+                        <button type={"button"}>
                             Find ID
-                        </span>
-                        <span>
+                        </button>
+                        <button type={"button"}>
                             Forgot password?
-                        </span>
+                        </button>
                     </div>
                 </div>
             </section>

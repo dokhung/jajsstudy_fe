@@ -14,6 +14,7 @@ import LoginPractice7 from "./components/LoginPractice7.tsx";
 import {LoginPractice8} from "./components/LoginPractice8.tsx";
 import {LoginPractice9} from "./components/LoginPractice9.tsx";
 import {LoginPractice10} from "./components/LoginPractice10.tsx";
+import LoginPractice11 from "./components/LoginPractice11.tsx";
 
 export const componentRoutes: {
   title: string;
@@ -80,6 +81,11 @@ export const componentRoutes: {
         path:"/components/LoginPractice10",
         element:<LoginPractice10/>,
     },
+    {
+        title:"LoginPractice11",
+        path:"/components/LoginPractice11",
+        element:<LoginPractice11/>,
+    }
 
 ];
 

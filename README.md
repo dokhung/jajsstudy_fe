@@ -7,7 +7,7 @@ npm install
 npm run dev
 ```
 
-화면: http://localhost:3000
+화면: http://localhost:5000
 
 ## 컴포넌트와 경로 등록
 
